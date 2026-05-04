@@ -95,11 +95,11 @@ Music/
 
 ### Input
 
-* `.mp3`, `.flac`, `.wav`, `.aac`, `.m4a`, `.ogg`
+* `.mp3`, `.flac`,   `.m4a`, `.opus`
 
 ### Output
 
-* `.mp3`, `.opus`, `.m4a`
+* `.mp3`, `.opus`, `.m4a`, `.flac`
 
 ---
 
