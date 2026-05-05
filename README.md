@@ -1,207 +1,165 @@
-# Ultima-Music-Converter
-Ultima Music Converter is a high-speed, parallelized Windows command-line tool powered by FFmpeg.
+# 🎧 ULTIMA MUSIC CONVERTER
 
-# 🎵 Ultima Music Converter
+**High-performance parallel audio conversion powered by FFmpeg**
 
-A powerful, all-in-one Windows batch script to **convert and organize your music library** with minimal effort. Built around FFmpeg, this tool supports multiple formats and batch processing — all through a simple menu interface.
+Ultima Music Converter is a lightweight command-line utility designed to batch-convert music libraries with speed and precision. It supports high-quality presets (320kbps) and lossless wrapping, ensuring your metadata and album art remain intact.
 
 ---
 
 ## 🚀 Features
 
-* 🔄 Convert audio formats:
-
-  * FLAC → MP3 / M4A
-  * MP3 → OPUS
-  * Multi-format → OPUS (bulk mode)
-* 📂 Recursive processing (handles entire folders automatically)
-* 🧹 Optional deletion of original files
-* 🎧 Metadata preservation (tags & album art when supported)
-* ⚡ High-quality encoding via FFmpeg
-* 🖥️ Simple interactive menu (no coding needed)
+* **Parallel Processing**: Converts up to 5 files simultaneously to maximize CPU usage.
+* **Cross-Platform**: Includes a `.bat` script for Windows and a `.sh` script for Linux.
+* **Deep Search**: Automatically scans subdirectories (recursive search) to find all your music.
+* **Metadata Retention**: Preserves audio streams, album art (where supported), and metadata.
+* **Smart Cleanup**: Deletes the source file only after a successful conversion.
+* **Unicode Support**: Handles spaces, emojis, and special characters without errors.
 
 ---
 
-## 📦 Requirements
+## 📥 Installation
 
-### 1. Install FFmpeg (Full Version via Winget)
+### 🪟 Windows
 
-Open **Command Prompt** or **Terminal** and run:
+1. **Install FFmpeg**
+   Open PowerShell or Command Prompt:
 
-```bash id="6bn66v"
-winget install --id Gyan.FFmpeg.Full -e
+   ```powershell
+   winget install ffmpeg
+   ```
+
+2. **Create the Script**
+   Create a new file named:
+
+   ```
+   ultima music converter.bat
+   ```
+
+3. **Critical Saving Procedure**
+
+   * Paste your script into Notepad
+   * Go to **File > Save As**
+   * Set **Save as type** → `All Files (*.*)`
+   * Set **Encoding** → `UTF-8`
+   * Save as:
+
+     ```
+     ultima music converter.bat
+     ```
+
+---
+
+### 🐧 Linux
+
+#### Debian / Ubuntu
+
+```bash
+sudo apt update && sudo apt install ffmpeg -y
 ```
 
-✅ This installs the **full FFmpeg build** with all major codecs (MP3, OPUS, AAC, etc.)
+#### Arch Linux
 
----
-
-### 2. Verify Installation
-
-```bash id="rrsizt"
-ffmpeg -version
+```bash
+sudo pacman -S ffmpeg
 ```
 
-If installed correctly, version details will appear.
+#### Fedora
 
----
-
-## 📁 Folder Setup
-
-Place the script inside your music directory:
-
-```id="okjt54"
-Music/
-│
-├── Album1/
-│   ├── song1.mp3
-│   ├── song2.flac
-│
-├── Album2/
-│   ├── track1.wav
-│
-└── ultima music converter.bat
+```bash
+sudo dnf install ffmpeg
 ```
 
----
+2. **Download Script**
 
-## ▶️ Usage
+```
+UltimaMusicConverter.sh
+```
 
-1. Double-click `ultima music converter.bat`
-2. Choose an option from the menu
-3. The script will:
+3. **Grant Permissions**
 
-   * Scan all subfolders
-   * Convert matching files
-   * Save output in the same location
-
----
-
-## 📜 Menu Options
-
-| Option | Action             |
-| ------ | ------------------ |
-| 1      | FLAC → MP3         |
-| 2      | FLAC → M4A         |
-| 3      | MP3 → OPUS         |
-| 4      | ALL formats → OPUS |
-| 5      | Exit               |
-
-> ⚠️ Options may vary slightly depending on your version.
-
----
-
-## 🎧 Supported Formats
-
-### Input
-
-* `.mp3`, `.flac`,   `.m4a`, `.opus`
-
-### Output
-
-* `.mp3`, `.opus`, `.m4a`, `.flac`
-
----
-
-## ⚙️ How It Works
-
-* Uses FFmpeg for conversion
-* Recursively scans directories
-* Maintains original filenames
-* Outputs files in the same folder as source
-
----
-
-## 🛠️ Troubleshooting
-
-### ❌ Script closes instantly
-
-Run it manually:
-
-```bash id="709bnk"
-cmd
-cd path\to\music
-ultima music converter.bat
+```bash
+chmod +x UltimaMusicConverter.sh
 ```
 
 ---
 
-### ❌ `ffmpeg` not recognized
+## 🛠 Usage
 
-* Restart terminal
-* Ensure installation completed
-* Test:
+### 🪟 Windows
 
-```bash id="oj811t"
-ffmpeg -version
-```
+1. Place `ultima music converter.bat` in the **root folder of your music library**
+   (the main folder containing all your subfolders and audio files)
 
----
+2. Run the script:
 
-### ❌ Conversion fails
+   ```
+   ultima music converter.bat
+   ```
 
-* Check if codec is supported
-* Ensure FFmpeg full build is installed
-* Verify file integrity
+   or double-click it
 
----
+3. Follow prompts to select:
 
-## 💡 Tips
-
-* 🔁 Backup files before bulk conversion
-* 🎧 Use OPUS for best quality/size balance
-* 💽 Use 320kbps MP3 for maximum compatibility
+   * Conversion type
+   * Parallel task limit (1–5)
 
 ---
 
-## 🧪 Example Commands (FFmpeg)
+### 🐧 Linux
 
-```bash id="ipb2vq"
-ffmpeg -i input.flac output.mp3
-ffmpeg -i input.mp3 output.opus
-```
+1. Place `UltimaMusicConverter.sh` in the **root folder of your music library**
 
----
+2. Open terminal in that folder
 
-## 🔐 Safety Notes
+3. Run:
 
-* Files **may be overwritten** depending on script settings
-* Deletion options are irreversible — use carefully
+   ```bash
+   ./UltimaMusicConverter.sh
+   ```
 
----
-
-## 📜 License
-
-This project is open-source. You are free to modify, distribute, and improve it.
+4. Follow the prompts inside the script
 
 ---
 
-## 🙌 Credits
+## 🎵 Supported Conversions
 
-* FFmpeg — encoding engine
-
----
-
-## ⭐ Contributing
-
-Contributions are welcome!
-
-* Improve script performance
-* Add new formats
-* Enhance error handling
-* Add UI improvements
-
-Fork the repo and submit a pull request 🚀
+| Source | Target            | Quality / Method        |
+| ------ | ----------------- | ----------------------- |
+| FLAC   | MP3 / M4A / Opus  | 320kbps High Quality    |
+| MP3    | Opus / M4A        | 320kbps High Quality    |
+| MP3    | FLAC              | Lossless Wrapping       |
+| M4A    | MP3 / Opus / FLAC | High Quality / Lossless |
+| Opus   | MP3 / M4A / FLAC  | High Quality / Lossless |
 
 ---
 
-## 📌 Future Ideas
+## ⚠️ Requirements
 
-* GUI version
-* Drag & drop support
-* Playlist-based conversion
-* Auto-tagging (artist/title lookup)
+* **FFmpeg must be installed**
+
+  ```bash
+  ffmpeg -version
+  ```
+* **Disk Space**
+  Ensure enough space for temporary files before originals are deleted.
 
 ---
 
-Enjoy fast, clean, and powerful music conversion with **Ultima Music Converter** 🎶
+## 📌 Notes
+
+* Script must be placed in the **root music folder** for proper recursive scanning
+* Source files are deleted **only after successful conversion**
+* Works with nested folders automatically
+* Supports most common audio formats
+
+---
+
+## 📄 License
+
+MIT License (or specify your preferred license)
+
+---
+
+## 💡 Tip
+
+For best performance, use SSD storage and increase parallel tasks based on your CPU capability.
