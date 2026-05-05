@@ -156,7 +156,7 @@ chmod +x UltimaMusicConverter.sh
 
 ## 📄 License
 
-MIT License (or specify your preferred license)
+MIT License 
 
 ---
 
